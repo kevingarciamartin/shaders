@@ -1,4 +1,4 @@
-import { Palette, Sparkles, Wand2, Square } from "lucide-react";
+import { Palette, Sparkles, Square, Wand2 } from "lucide-react";
 
 export interface ShaderMetadata {
   title: string;
@@ -26,6 +26,12 @@ export const shaderRegistry: ShaderCategory[] = [
         title: "Uniforms",
         slug: "uniforms",
         description: "Read-only inputs from the CPU to the GPU",
+      },
+      {
+        title: "gl_FragCoord",
+        slug: "gl-fragcoord",
+        description:
+          "Holds the screen coordinates of the pixel or screen fragment that the active thread is working on",
       },
     ],
   },
