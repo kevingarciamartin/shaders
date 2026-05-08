@@ -22,6 +22,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "hello-world",
         description: "Shader version of 'Hello World!'",
       },
+      {
+        title: "Uniforms",
+        slug: "uniforms",
+        description: "Read-only inputs from the CPU to the GPU",
+      },
     ],
   },
   {
