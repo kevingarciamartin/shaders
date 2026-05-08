@@ -1,4 +1,4 @@
-import { Palette, Sparkles, Wand2 } from "lucide-react";
+import { Palette, Sparkles, Wand2, Square } from "lucide-react";
 
 export interface ShaderMetadata {
   title: string;
@@ -13,6 +13,17 @@ export interface ShaderCategory {
 }
 
 export const shaderRegistry: ShaderCategory[] = [
+  {
+    title: "Basics",
+    icon: Square,
+    shaders: [
+      {
+        title: "Hello World",
+        slug: "hello-world",
+        description: "Shader version of 'Hello World!'",
+      },
+    ],
+  },
   {
     title: "Patterns",
     icon: Palette,
