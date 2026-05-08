@@ -2,7 +2,6 @@ import { useThree } from "@react-three/fiber";
 import { useControls } from "leva";
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
-import { uniform } from "three/tsl";
 
 const vertexShader = `
   void main() {
