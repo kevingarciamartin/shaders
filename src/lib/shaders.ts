@@ -34,8 +34,13 @@ export const shaderRegistry: ShaderCategory[] = [
           "Holds the screen coordinates of the pixel or screen fragment that the active thread is working on",
       },
       {
-        title: "Shaping Functions",
+        title: "Exponential Shaping Function",
         slug: "shaping-functions",
+        description: "AKA 'Mr. Miyagi's fence lesson'",
+      },
+      {
+        title: "Step Function",
+        slug: "step",
         description: "AKA 'Mr. Miyagi's fence lesson'",
       },
     ],

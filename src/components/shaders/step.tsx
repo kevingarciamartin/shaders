@@ -11,7 +11,7 @@ const vertexShader = `
 
 const fragmentShader = `
   uniform vec2 uResolution;
-  uniform float uExponent;
+  uniform float uThreshold;
 
   float plot(vec2 st, float pct){
     return  smoothstep( pct-0.01, pct, st.y) -
@@ -21,33 +21,35 @@ const fragmentShader = `
   void main() {
     vec2 st = gl_FragCoord.xy/uResolution;
 
-    float y = pow(st.x, uExponent);
+    // Step will return 0.0 unless the value is over 0.5,
+    // in that case it will return 1.0
+    float y = 1.5 * step(1.5 * uThreshold,st.x);
 
     vec3 color = vec3(y);
 
-    float pct = plot(st, y);
+    float pct = plot(st,y);
     color = (1.0-pct)*color+pct*vec3(0.0,1.0,0.0);
 
-	  gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(color,1.0);
   }
 `;
 
-export function ExpoShapingFunction() {
+export function Step() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const { size } = useThree();
-  const { exponent } = useControls({
-    exponent: {
-      value: 1.0,
-      min: 0.01,
-      max: 10.0,
-      step: 0.01,
+  const { threshold } = useControls({
+    threshold: {
+      value: 0.5,
+      min: 0.0,
+      max: 1.0,
+      step: 0.1,
     },
   });
 
   const uniforms = useMemo(
     () => ({
       uResolution: { value: new THREE.Vector2(size.width, size.height) },
-      uExponent: { type: "f", value: exponent },
+      uThreshold: { type: "f", value: threshold },
     }),
     []
   );
@@ -58,9 +60,9 @@ export function ExpoShapingFunction() {
 
   useEffect(() => {
     if (materialRef.current) {
-      materialRef.current.uniforms.uExponent.value = exponent;
+      materialRef.current.uniforms.uThreshold.value = threshold;
     }
-  }, [exponent]);
+  }, [threshold]);
 
   return (
     <mesh>
