@@ -54,32 +54,32 @@ export const shaderRegistry: ShaderCategory[] = [
     title: "Patterns",
     icon: Palette,
     shaders: [
-      {
-        title: "Voronoi",
-        slug: "voronoi",
-        description: "Cellular noise pattern",
-      },
-      { title: "Grid", slug: "grid", description: "Simple coordinate grid" },
+      // {
+      //   title: "Voronoi",
+      //   slug: "voronoi",
+      //   description: "Cellular noise pattern",
+      // },
+      // { title: "Grid", slug: "grid", description: "Simple coordinate grid" },
     ],
   },
   {
     title: "Effects",
     icon: Sparkles,
     shaders: [
-      { title: "Plasma", slug: "plasma", description: "Liquid color waves" },
-      { title: "Grain", slug: "grain", description: "Film grain effect" },
+      // { title: "Plasma", slug: "plasma", description: "Liquid color waves" },
+      // { title: "Grain", slug: "grain", description: "Film grain effect" },
     ],
   },
   {
     title: "Generative",
     icon: Wand2,
     shaders: [
-      {
-        title: "Perlin Noise",
-        slug: "perlin",
-        description: "Smooth gradient noise",
-      },
-      { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
+      // {
+      //   title: "Perlin Noise",
+      //   slug: "perlin",
+      //   description: "Smooth gradient noise",
+      // },
+      // { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
     ],
   },
 ];
