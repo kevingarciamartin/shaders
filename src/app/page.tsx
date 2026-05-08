@@ -11,12 +11,23 @@ export default function Home() {
       <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
         Shader Sandbox
       </h1>
-      <p className="text-xl text-muted-foreground mb-12">
+      <p className="text-xl text-muted-foreground">
         A collection of shader experiments created with GLSL, React Three Fiber
         and Next.js.
       </p>
+      <p className="text-xl text-muted-foreground">
+        Some examples are taken from{" "}
+        <Link
+          href={"https://thebookofshaders.com/"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          The Book of Shaders
+        </Link>.
+      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
         {shaderRegistry.map((category) => (
           <div
             key={category.title}
@@ -41,7 +52,7 @@ export default function Home() {
             </ul>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
