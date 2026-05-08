@@ -18,7 +18,6 @@ const fragmentShader = `
 
 export function GLFragCoord() {
   const { size } = useThree();
-  console.log(size);
 
   const uniforms = useMemo(
     () => ({
