@@ -43,6 +43,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "step",
         description: "AKA 'Mr. Miyagi's fence lesson'",
       },
+      {
+        title: "Smooth Step Function",
+        slug: "smoothstep",
+        description: "AKA 'Mr. Miyagi's fence lesson'",
+      },
     ],
   },
   {
