@@ -26,7 +26,7 @@ export default async function ShaderPage({ params }: ShaderPageProps) {
           <p className="text-sm text-muted-foreground">{shader.description}</p>
         )}
       </div>
-      <div className="flex-1 min-h-0">
+      <div className="flex-1 min-h-0 min-w-0">
         <ShaderCanvas>
           <ShaderLoader slug={slug} />
         </ShaderCanvas>

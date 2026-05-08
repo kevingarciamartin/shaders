@@ -35,9 +35,9 @@ export default function RootLayout({
         <TooltipProvider>
           <SidebarProvider>
             <AppSidebar />
-            <SidebarInset className="flex flex-col">
+            <SidebarInset className="flex flex-col min-h-screen min-w-0">
               <Header />
-              <main className="flex-1 relative">{children}</main>
+              <main className="flex-1 min-w-0 relative">{children}</main>
             </SidebarInset>
           </SidebarProvider>
         </TooltipProvider>
