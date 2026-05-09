@@ -1,4 +1,4 @@
-import { Palette, Sparkles, Square, Wand2 } from "lucide-react";
+import { Brush, Sparkles, Square, Wand2, Fingerprint } from "lucide-react";
 
 export interface ShaderMetadata {
   title: string;
@@ -57,7 +57,7 @@ export const shaderRegistry: ShaderCategory[] = [
   },
   {
     title: "Patterns",
-    icon: Palette,
+    icon: Fingerprint,
     shaders: [
       // {
       //   title: "Voronoi",
@@ -85,6 +85,18 @@ export const shaderRegistry: ShaderCategory[] = [
       //   description: "Smooth gradient noise",
       // },
       // { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
+    ],
+  },
+  {
+    title: "Compositions",
+    icon: Brush,
+    shaders: [
+      {
+        title: "William Turner Sunset",
+        slug: "william-turner-sunset",
+        description:
+          "An attempt at a composition that resembles the sunset in 'The Fighting Temeraire' (1838) by William Turner",
+      },
     ],
   },
 ];
