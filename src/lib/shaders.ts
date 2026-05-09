@@ -48,6 +48,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "smoothstep",
         description: "AKA 'Mr. Miyagi's fence lesson'",
       },
+      {
+        title: "Color Mix",
+        slug: "mix",
+        description: "The path to interesting gradients",
+      },
     ],
   },
   {
