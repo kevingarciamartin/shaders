@@ -58,6 +58,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "rectangle",
         description: "The creation of a rectangle",
       },
+      {
+        title: "Rectangle Outline",
+        slug: "rectangle-outline",
+        description: "The creation of a rectangle",
+      },
     ],
   },
   {
