@@ -23,7 +23,7 @@ const fragmentShader = `
 
     // Step will return 0.0 unless the value is over 0.5,
     // in that case it will return 1.0
-    float y = 1.5 * smoothstep(1.5 * uThresholds.x, 1.5 * uThresholds.y, st.x);
+    float y = smoothstep(uThresholds.x, uThresholds.y, st.x);
 
     vec3 color = vec3(y);
 
@@ -36,7 +36,7 @@ const fragmentShader = `
 
 export function SmoothStep() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
-  const { size } = useThree();
+  const { size, viewport } = useThree();
   const { thresholds } = useControls({
     thresholds: {
       value: [0.1, 0.9],
@@ -48,15 +48,23 @@ export function SmoothStep() {
 
   const uniforms = useMemo(
     () => ({
-      uResolution: { value: new THREE.Vector2(size.width, size.height) },
+      uResolution: {
+        value: new THREE.Vector2(
+          size.width * viewport.dpr,
+          size.height * viewport.dpr
+        ),
+      },
       uThresholds: { value: new THREE.Vector2(thresholds[0], thresholds[1]) },
     }),
     []
   );
 
   useEffect(() => {
-    uniforms.uResolution.value.set(size.width, size.height);
-  }, [size.width, size.height, uniforms]);
+    uniforms.uResolution.value.set(
+      size.width * viewport.dpr,
+      size.height * viewport.dpr
+    );
+  }, [size.width, size.height, viewport.dpr, uniforms]);
 
   useEffect(() => {
     uniforms.uThresholds.value.set(thresholds[0], thresholds[1]);

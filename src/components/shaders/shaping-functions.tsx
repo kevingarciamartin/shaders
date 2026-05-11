@@ -34,7 +34,7 @@ const fragmentShader = `
 
 export function ExpoShapingFunction() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
-  const { size } = useThree();
+  const { size, viewport } = useThree();
   const { exponent } = useControls({
     exponent: {
       value: 1.0,
@@ -46,15 +46,23 @@ export function ExpoShapingFunction() {
 
   const uniforms = useMemo(
     () => ({
-      uResolution: { value: new THREE.Vector2(size.width, size.height) },
+      uResolution: {
+        value: new THREE.Vector2(
+          size.width * viewport.dpr,
+          size.height * viewport.dpr
+        ),
+      },
       uExponent: { type: "f", value: exponent },
     }),
     []
   );
 
   useEffect(() => {
-    uniforms.uResolution.value.set(size.width, size.height);
-  }, [size.width, size.height, uniforms]);
+    uniforms.uResolution.value.set(
+      size.width * viewport.dpr,
+      size.height * viewport.dpr
+    );
+  }, [size.width, size.height, viewport.dpr, uniforms]);
 
   useEffect(() => {
     if (materialRef.current) {

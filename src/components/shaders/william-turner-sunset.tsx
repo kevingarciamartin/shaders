@@ -41,7 +41,7 @@ const fragmentShader = `
     // Animate Sun Position in an arc
     vec2 sunPos;
     sunPos.x = mix(0.0, 1.0, t);
-    sunPos.y = horizon - 0.5 + 1.5 * sin(t * PI / 1.1);
+    sunPos.y = horizon - 0.5 + sin(t * PI / 1.1);
 
     // Interpolate Palette
     vec3 skyBottom = mix(skyBottomSunrise, skyBottomSunset, t);
@@ -92,11 +92,16 @@ const fragmentShader = `
 
 export function WilliamTurnerSunset() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
-  const { size } = useThree();
+  const { size, viewport } = useThree();
 
   const uniforms = useMemo(
     () => ({
-      uResolution: { value: new THREE.Vector2(size.width, size.height) },
+      uResolution: {
+        value: new THREE.Vector2(
+          size.width * viewport.dpr,
+          size.height * viewport.dpr
+        ),
+      },
       uTime: { value: 0 },
     }),
     []
@@ -109,8 +114,11 @@ export function WilliamTurnerSunset() {
   });
 
   useEffect(() => {
-    uniforms.uResolution.value.set(size.width, size.height);
-  }, [size.width, size.height, uniforms]);
+    uniforms.uResolution.value.set(
+      size.width * viewport.dpr,
+      size.height * viewport.dpr
+    );
+  }, [size.width, size.height, viewport.dpr, uniforms]);
 
   return (
     <mesh>

@@ -30,8 +30,8 @@ const fragmentShader = `
 
     vec3 pct = vec3(st.x);
 
-    pct.r = 1.5 * smoothstep(1.5 * uRedThresholds.x, 1.5 * uRedThresholds.y, st.x);
-    pct.g = 1.5 * sin(st.x / 1.5 * uGreenWavelength * PI);
+    pct.r = smoothstep(uRedThresholds.x, uRedThresholds.y, st.x);
+    pct.g = sin(st.x * uGreenWavelength * PI);
     pct.b = pow(st.x, uBlueExponent);
 
     color = mix(uColorA, uColorB, pct);
@@ -47,7 +47,7 @@ const fragmentShader = `
 
 export function ColorMix() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
-  const { size } = useThree();
+  const { size, viewport } = useThree();
   const { colorA, colorB, redThresholds, greenWavelength, blueExponent } =
     useControls({
       colorA: "#0000ff",
@@ -74,7 +74,12 @@ export function ColorMix() {
 
   const uniforms = useMemo(
     () => ({
-      uResolution: { value: new THREE.Vector2(size.width, size.height) },
+      uResolution: {
+        value: new THREE.Vector2(
+          size.width * viewport.dpr,
+          size.height * viewport.dpr
+        ),
+      },
       uColorA: { value: new THREE.Color(colorA) },
       uColorB: { value: new THREE.Color(colorB) },
       uRedThresholds: {
@@ -87,17 +92,20 @@ export function ColorMix() {
   );
 
   useEffect(() => {
-    uniforms.uResolution.value.set(size.width, size.height);
-  }, [size.width, size.height, uniforms]);
+    uniforms.uResolution.value.set(
+      size.width * viewport.dpr,
+      size.height * viewport.dpr
+    );
+  }, [size.width, size.height, viewport.dpr, uniforms]);
 
   useEffect(() => {
     uniforms.uColorA.value.set(colorA);
   }, [colorA, uniforms]);
-  
+
   useEffect(() => {
     uniforms.uColorB.value.set(colorB);
   }, [colorB, uniforms]);
-  
+
   useEffect(() => {
     uniforms.uRedThresholds.value.set(redThresholds[0], redThresholds[1]);
   }, [redThresholds, uniforms]);

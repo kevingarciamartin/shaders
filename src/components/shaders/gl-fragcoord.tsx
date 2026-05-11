@@ -17,18 +17,26 @@ const fragmentShader = `
 `;
 
 export function GLFragCoord() {
-  const { size } = useThree();
+  const { size, viewport } = useThree();
 
   const uniforms = useMemo(
     () => ({
-      uResolution: { value: new THREE.Vector2(size.width, size.height) },
+      uResolution: {
+        value: new THREE.Vector2(
+          size.width * viewport.dpr,
+          size.height * viewport.dpr
+        ),
+      },
     }),
     []
   );
 
   useMemo(() => {
-    uniforms.uResolution.value.set(size.width, size.height);
-  }, [size.width, size.height, uniforms]);
+    uniforms.uResolution.value.set(
+      size.width * viewport.dpr,
+      size.height * viewport.dpr
+    );
+  }, [size.width, size.height, viewport.dpr, uniforms]);
 
   return (
     <mesh>
