@@ -30,7 +30,7 @@ const fragmentShader = `
   }
 `;
 
-export function ColorMix() {
+export function Rectangle() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const { size, viewport } = useThree();
   const { vertical, horizontal, blur } = useControls({
