@@ -53,6 +53,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "mix",
         description: "The path to interesting gradients",
       },
+      {
+        title: "Rectangle",
+        slug: "rectangle",
+        description: "The creation of a rectangle",
+      },
     ],
   },
   {
