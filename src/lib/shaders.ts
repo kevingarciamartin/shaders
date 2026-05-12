@@ -107,6 +107,12 @@ export const shaderRegistry: ShaderCategory[] = [
         description:
           "An attempt at a composition that resembles the sunset in 'The Fighting Temeraire' (1838) by William Turner",
       },
+      {
+        title: "Piet Mondrian Painting",
+        slug: "piet-mondrian",
+        description:
+          "An attempt at a composition that resembles the painting 'Tableau' (1921) by Piet Mondrian",
+      },
     ],
   },
 ];
