@@ -28,7 +28,7 @@ export default async function ShaderPage({ params }: ShaderPageProps) {
       </div>
       <div className="flex-1 min-h-0 min-w-0">
         <ShaderCanvas>
-          <ShaderLoader slug={slug} />
+          <ShaderLoader key={slug} slug={slug} />
         </ShaderCanvas>
       </div>
     </div>

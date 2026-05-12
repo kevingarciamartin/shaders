@@ -1,4 +1,4 @@
-import { Brush, Sparkles, Square, Wand2, Fingerprint } from "lucide-react";
+import { Brush, Fingerprint, Sparkles, Square, Wand2, type LucideIcon } from "lucide-react";
 
 export interface ShaderMetadata {
   title: string;
@@ -8,7 +8,7 @@ export interface ShaderMetadata {
 
 export interface ShaderCategory {
   title: string;
-  icon: any;
+  icon: LucideIcon;
   shaders: ShaderMetadata[];
 }
 

@@ -22,7 +22,7 @@ export function Uniforms() {
 
   const uniforms = useMemo(
     () => ({
-      uColor: { value: new THREE.Color(color) },
+      uColor: { value: new THREE.Color("#ff0000") },
     }),
     []
   );

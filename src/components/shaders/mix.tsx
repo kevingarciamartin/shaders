@@ -75,18 +75,15 @@ export function ColorMix() {
   const uniforms = useMemo(
     () => ({
       uResolution: {
-        value: new THREE.Vector2(
-          size.width * viewport.dpr,
-          size.height * viewport.dpr
-        ),
+        value: new THREE.Vector2(0, 0),
       },
-      uColorA: { value: new THREE.Color(colorA) },
-      uColorB: { value: new THREE.Color(colorB) },
+      uColorA: { value: new THREE.Color("#0000ff") },
+      uColorB: { value: new THREE.Color("#ffff00") },
       uRedThresholds: {
-        value: new THREE.Vector2(redThresholds[0], redThresholds[1]),
+        value: new THREE.Vector2(0.1, 0.9),
       },
-      uGreenWavelength: { value: greenWavelength },
-      uBlueExponent: { value: blueExponent },
+      uGreenWavelength: { value: 1.0 },
+      uBlueExponent: { value: 1.0 },
     }),
     []
   );

@@ -47,12 +47,9 @@ export function ExpoShapingFunction() {
   const uniforms = useMemo(
     () => ({
       uResolution: {
-        value: new THREE.Vector2(
-          size.width * viewport.dpr,
-          size.height * viewport.dpr
-        ),
+        value: new THREE.Vector2(0, 0),
       },
-      uExponent: { type: "f", value: exponent },
+      uExponent: { type: "f", value: 1.0 },
     }),
     []
   );

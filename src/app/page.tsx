@@ -1,5 +1,4 @@
-import { shaderRegistry } from "@/lib/shaders";
-import { ChevronRight, VectorSquare } from "lucide-react";
+import { VectorSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {

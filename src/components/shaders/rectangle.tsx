@@ -59,18 +59,15 @@ export function Rectangle() {
   const uniforms = useMemo(
     () => ({
       uResolution: {
-        value: new THREE.Vector2(
-          size.width * viewport.dpr,
-          size.height * viewport.dpr
-        ),
+        value: new THREE.Vector2(0, 0),
       },
       uVertical: {
-        value: new THREE.Vector2(vertical[0], vertical[1]),
+        value: new THREE.Vector2(0.3, 0.7),
       },
       uHorizontal: {
-        value: new THREE.Vector2(horizontal[0], horizontal[1]),
+        value: new THREE.Vector2(0.3, 0.7),
       },
-      uBlur: { value: blur },
+      uBlur: { value: 0.0 },
     }),
     []
   );

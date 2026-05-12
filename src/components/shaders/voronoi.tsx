@@ -32,7 +32,7 @@ export function TestShader() {
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uColor: { value: new THREE.Color(color) },
+      uColor: { value: new THREE.Color("#ff0066") },
     }),
     []
   )
@@ -43,10 +43,6 @@ export function TestShader() {
   }, [color, uniforms])
 
   // Simple r3f loop to update time
-  const meshRef = useMemo(() => {
-    return { current: null as any }
-  }, [])
-
   // In a real r3f component we use useFrame, but this is a placeholder
   return (
     <mesh scale={[2, 2, 1]}>

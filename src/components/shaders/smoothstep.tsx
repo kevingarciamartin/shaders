@@ -49,12 +49,9 @@ export function SmoothStep() {
   const uniforms = useMemo(
     () => ({
       uResolution: {
-        value: new THREE.Vector2(
-          size.width * viewport.dpr,
-          size.height * viewport.dpr
-        ),
+        value: new THREE.Vector2(0, 0),
       },
-      uThresholds: { value: new THREE.Vector2(thresholds[0], thresholds[1]) },
+      uThresholds: { value: new THREE.Vector2(0.1, 0.9) },
     }),
     []
   );

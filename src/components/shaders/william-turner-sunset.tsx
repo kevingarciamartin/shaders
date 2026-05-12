@@ -97,10 +97,7 @@ export function WilliamTurnerSunset() {
   const uniforms = useMemo(
     () => ({
       uResolution: {
-        value: new THREE.Vector2(
-          size.width * viewport.dpr,
-          size.height * viewport.dpr
-        ),
+        value: new THREE.Vector2(0, 0),
       },
       uTime: { value: 0 },
     }),

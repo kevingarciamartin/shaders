@@ -49,12 +49,9 @@ export function Step() {
   const uniforms = useMemo(
     () => ({
       uResolution: {
-        value: new THREE.Vector2(
-          size.width * viewport.dpr,
-          size.height * viewport.dpr
-        ),
+        value: new THREE.Vector2(0, 0),
       },
-      uThreshold: { type: "f", value: threshold },
+      uThreshold: { type: "f", value: 0.5 },
     }),
     []
   );
