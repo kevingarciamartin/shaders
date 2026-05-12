@@ -17,8 +17,10 @@ const fragmentShader = `
   uniform float uStroke;
 
   vec3 rectangle (in vec2 st, in vec2 horizontal, in vec2 vertical, in float blur) {
-    vec2 bl = smoothstep(vec2(horizontal.x, vertical.x), vec2(horizontal.x + blur, vertical.x + blur),st);
-    vec2 tr = smoothstep(vec2(1.0 - horizontal.y - blur, 1.0 - vertical.y - blur), vec2(1.0 - horizontal.y, 1.0 - vertical.y), 1.0-st);
+    vec2 bl = smoothstep(vec2(horizontal.x - 0.5 * blur, vertical.x - 0.5 * blur), 
+                         vec2(horizontal.x + 0.5 * blur, vertical.x + 0.5 * blur),st);
+    vec2 tr = smoothstep(vec2(1.0 - horizontal.y - 0.5 * blur, 1.0 - vertical.y - 0.5 * blur), 
+                         vec2(1.0 - horizontal.y + 0.5 * blur, 1.0 - vertical.y + 0.5 * blur), 1.0-st);
 
     return vec3(bl.x * bl.y * tr.x * tr.y);
   }
