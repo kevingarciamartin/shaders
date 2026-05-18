@@ -1,4 +1,11 @@
-import { Brush, Fingerprint, Sparkles, Square, Wand2, type LucideIcon } from "lucide-react";
+import {
+  Brush,
+  Fingerprint,
+  Sparkles,
+  Square,
+  Wand2,
+  type LucideIcon,
+} from "lucide-react";
 
 export interface ShaderMetadata {
   title: string;
@@ -62,6 +69,11 @@ export const shaderRegistry: ShaderCategory[] = [
         title: "Rectangle Outline",
         slug: "rectangle-outline",
         description: "The creation of a rectangle",
+      },
+      {
+        title: "Circle",
+        slug: "circle",
+        description: "The creation of a circle",
       },
     ],
   },
