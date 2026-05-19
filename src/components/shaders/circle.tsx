@@ -46,7 +46,7 @@ export function Circle() {
         value: new THREE.Vector2(0, 0),
       },
       uRadius: {
-        value: { value: radius },
+        value: radius,
       },
     }),
     []
