@@ -75,6 +75,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "circle",
         description: "The creation of a circle",
       },
+      {
+        title: "Distance Field",
+        slug: "distance-field",
+        description: "The creation of a distance field",
+      },
     ],
   },
   {
