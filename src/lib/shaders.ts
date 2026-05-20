@@ -63,22 +63,22 @@ export const shaderRegistry: ShaderCategory[] = [
       {
         title: "Rectangle",
         slug: "rectangle",
-        description: "The creation of a rectangle",
       },
       {
         title: "Rectangle Outline",
         slug: "rectangle-outline",
-        description: "The creation of a rectangle",
       },
       {
         title: "Circle",
         slug: "circle",
-        description: "The creation of a circle",
       },
       {
         title: "Distance Field",
         slug: "distance-field",
-        description: "The creation of a distance field",
+      },
+      {
+        title: "Polar Shapes",
+        slug: "polar-shapes",
       },
     ],
   },
