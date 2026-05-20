@@ -80,6 +80,10 @@ export const shaderRegistry: ShaderCategory[] = [
         title: "Polar Shapes",
         slug: "polar-shapes",
       },
+      {
+        title: "Polygons",
+        slug: "polygon",
+      },
     ],
   },
   {
