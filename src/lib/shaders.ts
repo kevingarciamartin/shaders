@@ -84,6 +84,11 @@ export const shaderRegistry: ShaderCategory[] = [
         title: "Polygons",
         slug: "polygon",
       },
+      {
+        title: "Translation",
+        slug: "translation",
+        description: "Moving a shape",
+      },
     ],
   },
   {
