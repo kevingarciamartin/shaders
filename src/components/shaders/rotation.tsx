@@ -37,10 +37,11 @@ const fragmentShader = `
   
   void main() {
     vec2 st = gl_FragCoord.xy/uResolution.xy;
+    st.x *= uResolution.x/uResolution.y;
     vec3 color = vec3(0.0);
 
     // move space from the center to the vec2(0.0)
-    st -= vec2(0.5);
+    st -= vec2(0.5 * uResolution.x/uResolution.y, 0.5);
     // rotate the space
     st = rotate2d( sin(uTime)*PI + sin(uTime - abs(st.x) - abs(st.y))*PI ) * st;
     // move it back to the original place

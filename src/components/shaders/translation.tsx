@@ -23,6 +23,7 @@ const fragmentShader = `
   
   void main() {
     vec2 st = gl_FragCoord.xy/uResolution.xy;
+    st.x *= uResolution.x/uResolution.y;
     vec3 color = vec3(0.0);
 
     // Calculate vertical bouncing motion using a sawtooth wave and absolute sine
@@ -30,7 +31,7 @@ const fragmentShader = `
     float y_pos = - 0.5 * abs(3. / t * sin(t * PI)); // Bouncing curve
 
     // To move the circle we move the space
-    vec2 translate = vec2(-0.8*t + 1.5, y_pos + 0.3);
+    vec2 translate = vec2(-0.8*t  * uResolution.x/uResolution.y + 2., y_pos + 0.3);
     st += translate*0.35;
 
     // Show the coordinates of the space on the background

@@ -19,12 +19,14 @@ const fragmentShader = `
   
   void main() {
     vec2 st = gl_FragCoord.xy/uResolution.xy;
-    st.x *= uResolution.x/uResolution.y;
+    float ratio = uResolution.x/uResolution.y;
     vec3 color = vec3(0.);
     float d = 0.;
 
-    // Remap the space to -1. to 1.
-    st = st *2.-1.;
+    // Remap the space to -1. to 1. and fix aspect ratio
+    st -= 0.5;
+    st.x *= ratio;
+    st *= 2.0;
 
     // Number of sides of your shape
     int N = uSides;
@@ -67,7 +69,7 @@ export function Polygon() {
         value: sides,
       },
     }),
-    []
+    [sides]
   );
 
   useEffect(() => {

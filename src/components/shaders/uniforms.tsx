@@ -33,7 +33,7 @@ export function Uniforms() {
 
   return (
     <mesh>
-      <planeGeometry args={[1, 1]} />
+      <planeGeometry args={[2, 2]} />
       <shaderMaterial
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}

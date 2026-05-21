@@ -13,8 +13,8 @@ const fragmentShader = `
   uniform vec2 uResolution;
   uniform float uRadius;
 
- float circle(in vec2 _st, in float _radius) {
-    vec2 dist = _st-vec2(0.5);
+ float circle(in vec2 _st, in vec2 _center, in float _radius) {
+    vec2 dist = _st - _center;
 	  return 1.-smoothstep(_radius-(_radius*0.01),
                          _radius+(_radius*0.01),
                          dot(dist,dist)*4.0);
@@ -22,7 +22,11 @@ const fragmentShader = `
   
   void main() {
     vec2 st = gl_FragCoord.xy/uResolution.xy;
-    vec3 color = vec3(circle(st, uRadius));
+    float ratio = uResolution.x/uResolution.y;
+    st.x *= ratio;
+    
+    vec2 center = vec2(0.5 * ratio, 0.5);
+    vec3 color = vec3(circle(st, center, uRadius));
 
     gl_FragColor = vec4(color,1.0);
   }
@@ -49,7 +53,7 @@ export function Circle() {
         value: radius,
       },
     }),
-    []
+    [radius]
   );
 
   useEffect(() => {
