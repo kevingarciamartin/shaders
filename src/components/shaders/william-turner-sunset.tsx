@@ -36,12 +36,13 @@ const fragmentShader = `
     vec3 color = vec3(0.0);
 
     // Animation factor (0.0 to 1.0)
-    float t = sin(uTime * 0.3) * 0.5 + 0.5;
+    float t_animation = mod(uTime, 5.0); // Loop animation every 5 seconds
+    float t = sin(t_animation * 0.3) * 0.5 + 0.5;
 
     // Animate Sun Position in an arc
     vec2 sunPos;
-    sunPos.x = mix(0.0, 1.0, t);
-    sunPos.y = horizon - 0.5 + sin(t * PI / 1.1);
+    sunPos.x = mix(-1.0, 1.0, t);
+    sunPos.y = sin(t * PI / 1.1);
 
     // Interpolate Palette
     vec3 skyBottom = mix(skyBottomSunrise, skyBottomSunset, t);
