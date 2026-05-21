@@ -94,6 +94,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "rotation",
         description: "Rotating a shape",
       },
+      {
+        title: "Scale",
+        slug: "scale",
+        description: "Scaling a shape",
+      },
     ],
   },
   {
