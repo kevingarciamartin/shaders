@@ -106,6 +106,7 @@ export const shaderRegistry: ShaderCategory[] = [
     icon: Fingerprint,
     shaders: [
       { title: "Grid", slug: "grid" },
+      { title: "Diamond Tiles", slug: "diamondtiles" },
       // {
       //   title: "Voronoi",
       //   slug: "voronoi",
