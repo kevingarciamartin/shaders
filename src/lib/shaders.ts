@@ -101,18 +101,18 @@ export const shaderRegistry: ShaderCategory[] = [
       },
     ],
   },
-  // {
-  //   title: "Patterns",
-  //   icon: Fingerprint,
-  //   shaders: [
-  //     // {
-  //     //   title: "Voronoi",
-  //     //   slug: "voronoi",
-  //     //   description: "Cellular noise pattern",
-  //     // },
-  //     // { title: "Grid", slug: "grid", description: "Simple coordinate grid" },
-  //   ],
-  // },
+  {
+    title: "Patterns",
+    icon: Fingerprint,
+    shaders: [
+      { title: "Grid", slug: "grid" },
+      // {
+      //   title: "Voronoi",
+      //   slug: "voronoi",
+      //   description: "Cellular noise pattern",
+      // },
+    ],
+  },
   // {
   //   title: "Effects",
   //   icon: Sparkles,
@@ -152,8 +152,7 @@ export const shaderRegistry: ShaderCategory[] = [
       {
         title: "Radar",
         slug: "radar",
-        description:
-          "A composition of a radar",
+        description: "A composition of a radar",
       },
     ],
   },
