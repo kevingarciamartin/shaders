@@ -101,38 +101,38 @@ export const shaderRegistry: ShaderCategory[] = [
       },
     ],
   },
-  {
-    title: "Patterns",
-    icon: Fingerprint,
-    shaders: [
-      // {
-      //   title: "Voronoi",
-      //   slug: "voronoi",
-      //   description: "Cellular noise pattern",
-      // },
-      // { title: "Grid", slug: "grid", description: "Simple coordinate grid" },
-    ],
-  },
-  {
-    title: "Effects",
-    icon: Sparkles,
-    shaders: [
-      // { title: "Plasma", slug: "plasma", description: "Liquid color waves" },
-      // { title: "Grain", slug: "grain", description: "Film grain effect" },
-    ],
-  },
-  {
-    title: "Generative",
-    icon: Wand2,
-    shaders: [
-      // {
-      //   title: "Perlin Noise",
-      //   slug: "perlin",
-      //   description: "Smooth gradient noise",
-      // },
-      // { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
-    ],
-  },
+  // {
+  //   title: "Patterns",
+  //   icon: Fingerprint,
+  //   shaders: [
+  //     // {
+  //     //   title: "Voronoi",
+  //     //   slug: "voronoi",
+  //     //   description: "Cellular noise pattern",
+  //     // },
+  //     // { title: "Grid", slug: "grid", description: "Simple coordinate grid" },
+  //   ],
+  // },
+  // {
+  //   title: "Effects",
+  //   icon: Sparkles,
+  //   shaders: [
+  //     // { title: "Plasma", slug: "plasma", description: "Liquid color waves" },
+  //     // { title: "Grain", slug: "grain", description: "Film grain effect" },
+  //   ],
+  // },
+  // {
+  //   title: "Generative",
+  //   icon: Wand2,
+  //   shaders: [
+  //     // {
+  //     //   title: "Perlin Noise",
+  //     //   slug: "perlin",
+  //     //   description: "Smooth gradient noise",
+  //     // },
+  //     // { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
+  //   ],
+  // },
   {
     title: "Compositions",
     icon: Brush,
@@ -147,7 +147,13 @@ export const shaderRegistry: ShaderCategory[] = [
         title: "Piet Mondrian Painting",
         slug: "piet-mondrian",
         description:
-          "An attempt at a composition that resembles the painting 'Tableau' (1921) by Piet Mondrian",
+          "A composition of the painting 'Tableau' (1921) by Piet Mondrian",
+      },
+      {
+        title: "Radar",
+        slug: "radar",
+        description:
+          "A composition of a radar",
       },
     ],
   },
