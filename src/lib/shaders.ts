@@ -108,6 +108,7 @@ export const shaderRegistry: ShaderCategory[] = [
       { title: "Grid", slug: "grid" },
       { title: "Diamond Tiles", slug: "diamondtiles" },
       { title: "Scottish Tartan", slug: "tartan" },
+      { title: "Offset", slug: "offset" },
       // {
       //   title: "Voronoi",
       //   slug: "voronoi",
