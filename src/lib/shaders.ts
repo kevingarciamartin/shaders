@@ -110,12 +110,12 @@ export const shaderRegistry: ShaderCategory[] = [
       { title: "Scottish Tartan", slug: "tartan" },
       { title: "Offset", slug: "offset" },
       { title: "Truchet Tiles", slug: "truchet" },
-      // {
-      //   title: "Bagua",
-      //   slug: "bagua",
-      //   description:
-      //     'Bagua is a group of trigrams composed of three lines, each either "broken" or "unbroken", which represent yin and yang, respectively.',
-      // },
+      {
+        title: "Bagua",
+        slug: "bagua",
+        description:
+          'Bagua is a group of trigrams composed of three lines, each either "broken" or "unbroken", which represent yin and yang, respectively.',
+      },
       // {
       //   title: "Voronoi",
       //   slug: "voronoi",
