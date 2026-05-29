@@ -136,8 +136,8 @@ export const shaderRegistry: ShaderCategory[] = [
     icon: Wand2,
     shaders: [
       {
-        title: "Random",
-        slug: "random",
+        title: "Random 1",
+        slug: "random-1",
         description: "Make interesting patterns by moving the mouse",
       },
       // {
