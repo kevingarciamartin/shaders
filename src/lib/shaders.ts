@@ -131,18 +131,23 @@ export const shaderRegistry: ShaderCategory[] = [
   //     // { title: "Grain", slug: "grain", description: "Film grain effect" },
   //   ],
   // },
-  // {
-  //   title: "Generative",
-  //   icon: Wand2,
-  //   shaders: [
-  //     // {
-  //     //   title: "Perlin Noise",
-  //     //   slug: "perlin",
-  //     //   description: "Smooth gradient noise",
-  //     // },
-  //     // { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
-  //   ],
-  // },
+  {
+    title: "Generative",
+    icon: Wand2,
+    shaders: [
+      {
+        title: "Random",
+        slug: "random",
+        description: "Make interesting patterns by moving the mouse",
+      },
+      // {
+      //   title: "Perlin Noise",
+      //   slug: "perlin",
+      //   description: "Smooth gradient noise",
+      // },
+      // { title: "FBM", slug: "fbm", description: "Fractional Brownian Motion" },
+    ],
+  },
   {
     title: "Compositions",
     icon: Brush,
