@@ -85,7 +85,7 @@ const fragmentShader = `
   }
 `;
 
-export function bagua() {
+export function Bagua() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const { size, viewport } = useThree();
 
