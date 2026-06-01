@@ -140,6 +140,8 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "random-1",
         description: "Make interesting patterns by moving the mouse",
       },
+      { title: "Random 2", slug: "random-2" },
+      // { title: "Random 3", slug: "random-3" },
       // {
       //   title: "Perlin Noise",
       //   slug: "perlin",
