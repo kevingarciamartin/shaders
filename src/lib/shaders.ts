@@ -171,6 +171,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "radar",
         description: "A composition of a radar",
       },
+      {
+        title: "Mark Rothko Painting",
+        slug: "mark-rothko",
+        description: "A composition of the painting 'Three' (1950) by Mark Rothko",
+      },
     ],
   },
 ];
