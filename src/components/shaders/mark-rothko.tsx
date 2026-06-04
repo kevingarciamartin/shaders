@@ -45,7 +45,7 @@ const fragmentShader = `
   }
 
   vec3 rectangle (in vec2 st, in vec2 horizontal, in vec2 vertical) {
-    float blur = 0.003;
+    float blur = 0.009;
     
     float left = horizontal.x + wobble(st.y, 1.1);
     float right = horizontal.y + wobble(st.y, 2.2);
