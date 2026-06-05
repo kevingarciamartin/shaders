@@ -16,7 +16,7 @@ const fragmentShader = `
   #define PI 3.14159265358979323846
 
   float random (in vec2 _st) {
-    return fract(sin(dot(_st.xy, uMouse)) * uTime * 0.01);
+    return fract(sin(dot(_st.xy, uMouse)) * (uTime + 10.) * 0.01);
   }
 
   vec2 truchetPattern(in vec2 _st, in float _index){
