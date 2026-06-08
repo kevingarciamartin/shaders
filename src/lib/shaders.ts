@@ -142,6 +142,7 @@ export const shaderRegistry: ShaderCategory[] = [
       },
       { title: "Random 2", slug: "random-2" },
       { title: "Random 3", slug: "random-3" },
+      { title: "Wood", slug: "wood" },
       // {
       //   title: "Perlin Noise",
       //   slug: "perlin",
