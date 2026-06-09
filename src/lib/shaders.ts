@@ -143,6 +143,8 @@ export const shaderRegistry: ShaderCategory[] = [
       { title: "Random 2", slug: "random-2" },
       { title: "Random 3", slug: "random-3" },
       { title: "Wood", slug: "wood" },
+      { title: "Splatter", slug: "splatter" },
+      // { title: "Circle Wave", slug: "circle-wave" },
       // {
       //   title: "Perlin Noise",
       //   slug: "perlin",
