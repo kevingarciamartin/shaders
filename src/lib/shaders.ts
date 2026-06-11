@@ -179,6 +179,11 @@ export const shaderRegistry: ShaderCategory[] = [
         slug: "mark-rothko",
         description: "A composition of the painting 'Three' (1950) by Mark Rothko",
       },
+      {
+        title: "Jackson Pollock Painting",
+        slug: "jackson-pollock",
+        description: "A generative composition of the painting 'Number 14 gray' (1948) by Jackson Pollock",
+      },
     ],
   },
 ];
